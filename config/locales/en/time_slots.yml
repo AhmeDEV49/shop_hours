@@ -1,0 +1,5 @@
+en:
+  time_slots:
+    errors:
+      overlap: 'The time slots entered overlap one or more other time slots.'
+    format: '%I:%M %p'

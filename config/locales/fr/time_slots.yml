@@ -1,0 +1,5 @@
+fr:
+  time_slots:
+    errors:
+      overlap: 'Les horaires renseignées entre en conflit avec un ou plusieurs autre(s) créneau(x).'
+    format: '%H:%M'
