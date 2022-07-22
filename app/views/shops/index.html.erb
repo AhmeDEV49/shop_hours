@@ -2,7 +2,7 @@
 
 <% @shops.each do |shop| %>
   <% days_week_ordered_from_today.each do |day| %>
-    <span class="<%= class_names(bold:  is_today?(day: day)) %>">
+    <span class="<%= class_names(bold:  today?(day: day)) %>">
       <%= I18n.t("day_of_the_week.#{day.downcase}") %> 
       <% if shop.time_slot_for_day(day).empty? %>
         <%= I18n.t('closed') %>
