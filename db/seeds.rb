@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# frozen_string_literal: true
+
+shop = Shop.create!(name: 'My super shop')
+
+shop_slots = [
+  TimeSlot.new(day: 'Wednesday', start_time: '10:30', end_time: '15:00'),
+  TimeSlot.new(day: 'Wednesday', start_time: '17:00', end_time: '20:00'),
+  TimeSlot.new(day: 'Thursday', start_time: '10:30', end_time: '15:00'),
+  TimeSlot.new(day: 'Thursday', start_time: '17:00', end_time: '20:00'),
+  TimeSlot.new(day: 'Friday', start_time: '10:30', end_time: '15:00'),
+  TimeSlot.new(day: 'Friday', start_time: '17:00', end_time: '20:00'),
+  TimeSlot.new(day: 'Saturday', start_time: '10:30', end_time: '20:00'),
+  TimeSlot.new(day: 'Monday', start_time: '10:30', end_time: '15:00'),
+  TimeSlot.new(day: 'Monday', start_time: '17:00', end_time: '20:00'),
+  TimeSlot.new(day: 'Tuesday', start_time: '10:30', end_time: '15:00'),
+  TimeSlot.new(day: 'Tuesday', start_time: '17:00', end_time: '20:00')
+]
+
+shop.time_slots << shop_slots
+shop.save!
