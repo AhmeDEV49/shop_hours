@@ -1,0 +1,18 @@
+<b><%= I18n.t('schedules') %></b> :
+
+<% @shops.each do |shop| %>
+  <% days_week_ordered_from_today.each do |day| %>
+    <span class="<%= class_names(bold:  is_today?(day: day)) %>">
+      <%= I18n.t("day_of_the_week.#{day.downcase}") %> 
+      <% if shop.time_slot_for_day(day).empty? %>
+        <%= I18n.t('closed') %>
+      <% else %>
+        <%= shop.time_slot_for_day(day).map { |time_slot| time_slot.decorate.opening_hours }.join(', ') %>
+      <% end %>
+    </span>
+    <br>
+  <% end %>
+<% end %>
+<hr>
+<%= link_to "FR", "/fr" %>
+<%= link_to "EN", "/en" %>
